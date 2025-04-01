@@ -1,0 +1,32 @@
+[workspace]
+members = [
+    "core",
+    "ffi",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "GitLens: A comprehensive Rust library for read-only Git repository analysis"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/yourusername/gitlens"
+readme = "README.md"
+keywords = ["git", "version-control", "analytics", "vcs", "dvcs"]
+categories = ["development-tools", "command-line-utilities"]
+
+[workspace.dependencies]
+# Core dependencies
+thiserror = "2.0.12"
+regex = "1.11.1"
+once_cell = "1.21.3"
+chrono = "0.4.40"
+serde = { version = "1.0.219", features = ["derive"] }
+
+# Async support
+tokio = { version = "1.44.1", features = ["full"] }
+
+# Testing dependencies
+tempfile = "3.19.1"
+assert_cmd = "2.0"
+predicates = "3.0"

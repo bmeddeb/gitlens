@@ -1,0 +1,32 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "gitlens"
+version = "0.1.0"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"},
+]
+description = "A read-only Git repository analysis library"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 3 - Alpha",
+    "Topic :: Software Development :: Version Control :: Git",
+]
+
+[tool.maturin]
+module-name = "gitlens._gitlens"
+python-source = "GitLens"
+
+[tool.black]
+line-length = 100

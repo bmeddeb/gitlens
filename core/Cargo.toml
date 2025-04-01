@@ -1,0 +1,42 @@
+[package]
+name = "gitlens-core"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+description.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+# Error handling
+thiserror.workspace = true
+
+# For validating Git URLs with regular expressions
+regex.workspace = true
+
+# For safe one-time initialization of static data
+once_cell.workspace = true
+
+# For parsing and formatting time
+chrono.workspace = true
+
+# Optional serialization/deserialization
+serde = { workspace = true, features = ["derive"], optional = true }
+
+# For async Git operations (optional)
+tokio = { workspace = true, features = ["full"], optional = true }
+
+[features]
+default = []
+serde = ["dep:serde"]
+async = ["dep:tokio"]
+full = ["serde", "async"]
+
+[dev-dependencies]
+tempfile.workspace = true
+assert_cmd.workspace = true
+predicates.workspace = true
+tokio = { workspace = true, features = ["full", "test-util"] }
